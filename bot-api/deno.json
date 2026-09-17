@@ -1,0 +1,18 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-net --allow-env --allow-read --allow-write --env-file=.env src/index.ts",
+    "start": "deno run --allow-net --allow-env --allow-read --allow-write --env-file=.env src/index.ts",
+    "db:init": "deno run --allow-read --allow-write --allow-env --env-file=.env src/db/init.ts",
+    "check": "deno check src/index.ts"
+  },
+  "imports": {
+    "gramio": "npm:gramio@^0.4.1",
+    "@gramio/auto-answer-callback-query": "npm:@gramio/auto-answer-callback-query@^0.0.2",
+    "better-sqlite3": "npm:better-sqlite3@^11.3.0"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "lib": ["deno.window"]
+  },
+  "nodeModulesDir": "auto"
+}
